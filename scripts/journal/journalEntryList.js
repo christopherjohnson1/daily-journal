@@ -5,14 +5,9 @@ export const journalList = () => {
   const contentElement = document.querySelector(".automated")
   const journals = useJournalEntries()
 
-  let journalHTMLrepresentation = ""
-  for(const journalObj of journals){
-      journalHTMLrepresentation += journalAsHTML(journalObj)
-  }
-
   contentElement.innerHTML += `
       <article class="journalEntriesList">
-          ${journalHTMLrepresentation}
+          ${journals.map(journalObj => journalAsHTML(journalObj)).join('')}
       </article>
   `
 }
