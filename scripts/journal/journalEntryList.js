@@ -1,8 +1,11 @@
-import { useJournalEntries } from "./journalDataProvider.js"
+import { useJournalEntries, getEntries } from "./journalDataProvider.js"
 import { journalAsHTML } from "./journalEntry.js"
 
-export const journalList = () => {
-  const contentElement = document.querySelector(".automated")
+const contentElement = document.querySelector(".automated")
+
+
+
+ const render = (entryCollection) => {
   const journals = useJournalEntries()
 
   contentElement.innerHTML += `
@@ -10,4 +13,12 @@ export const journalList = () => {
           ${journals.map(journalObj => journalAsHTML(journalObj)).join('')}
       </article>
   `
+}
+
+export const journalEntryList = () => {
+    getEntries().then(() => {
+      const entries = useJournalEntries()
+
+      render(entries)
+    })
 }
