@@ -1,3 +1,3 @@
-import {journalList} from './journal/journalEntryList.js'
+import { journalEntryList } from "./journal/journalEntryList.js"
 
-journalList()
+journalEntryList()
