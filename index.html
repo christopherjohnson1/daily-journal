@@ -7,40 +7,14 @@
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
+  <div class="eventHub">
   <header><img src="./images/daily-journal-logo.png" alt=""></header>
   
   <main>
 
     <article>
-
-      <form>
-            <h2>Save New Journal Entry</h2>
-            
-            <fieldset>
-                <label for="journalDate">Select Entry Date</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-            <fieldset class="concepts">
-                <label for="journalConcepts">Concepts covered</label>
-                <textarea class="concepts-covered" placeholder="Today we learned about..."></textarea>
-            </fieldset> 
-            <fieldset class="entry">
-                <label for="journalEntry">Journal Entry</label>
-            <textarea class="journal-entry" placeholder="Go into more detail here..."></textarea>
-            </fieldset> 
-            <fieldset>
-                <label for="journalFeelins">Mood for the day</label>
-                <select class="feelings">
-                    <option>happy</option>
-                    <option>sad</option>
-                    <option>angry</option>
-                    <option>indifferent</option>
-
-                </select>
-            </fieldset>
-        <button class="submit-button">Submit</button>
-    </form>
-
+      <div class="journal-entry-form"></div>
+      
     <section class="automated">
         <h2>Journal Entries</h2>
         
@@ -57,5 +31,6 @@
   <p>2020 Chris Johnson for NSS</p>
 </footer>
   <script type="module" src="./scripts/main.js"></script>
+</div>
 </body>
 </html>
