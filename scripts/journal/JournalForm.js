@@ -1,4 +1,9 @@
 import { saveJournalEntry } from "./journalDataProvider.js"
+import { getmoods, useMoods, moods } from "./moodDataProvider.js"
+
+getmoods()
+useMoods()
+console.log(moods)
 
 const contentTarget = document.querySelector(".journal-entry-form")
 const eventHub = document.querySelector(".eventHub")
