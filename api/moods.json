@@ -1,0 +1,20 @@
+{
+    "moods": [
+        {
+            "id": 1,
+            "label": "happy"
+        },
+        {
+            "id": 2,
+            "label": "sad"
+        },
+        {
+            "id": 3,
+            "label": "angry"
+        },
+        {
+            "id": 4,
+            "label": "indifferent"
+        }
+    ]
+}
