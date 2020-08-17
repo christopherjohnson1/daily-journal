@@ -1,9 +1,5 @@
 import { saveJournalEntry } from "./journalDataProvider.js"
-import { getmoods, useMoods, moods } from "./moodDataProvider.js"
-
-getmoods()
-useMoods()
-console.log(moods)
+import { useMoods, getmoods } from "./moodDataProvider.js"
 
 const contentTarget = document.querySelector(".journal-entry-form")
 const eventHub = document.querySelector(".eventHub")
@@ -26,34 +22,42 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-export const RenderJournalEntryForm = () => {
-    contentTarget.innerHTML = `
-    <form>
-            <h2>Save New Journal Entry</h2>
-            
-            <fieldset>
-                <label for="journalDate">Select Entry Date</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-            <fieldset class="concepts">
-                <label for="journalConcepts">Concepts covered</label>
-                <textarea class="concepts-covered" id ="conceptsCovered" placeholder="Today we learned about..."></textarea>
-            </fieldset> 
-            <fieldset class="entry">
-                <label for="journalEntry">Journal Entry</label>
-            <textarea class="journal-entry" id="journalEntry" placeholder="Go into more detail here..."></textarea>
-            </fieldset> 
-            <fieldset>
-                <label for="journalFeelins">Mood for the day</label>
-                <select class="feelings" id="daily-mood">
-                    <option>happy</option>
-                    <option>sad</option>
-                    <option>angry</option>
-                    <option>indifferent</option>
 
-                </select>
+export const RenderJournalEntryForm = () => {
+    getmoods()
+    .then(() => {
+        const moods = useMoods()
+        contentTarget.innerHTML = `
+        <form>
+        <h2>Save New Journal Entry</h2>
+        
+        <fieldset>
+        <label for="journalDate">Select Entry Date</label>
+        <input type="date" name="journalDate" id="journalDate">
+        </fieldset>
+        <fieldset class="concepts">
+        <label for="journalConcepts">Concepts covered</label>
+        <textarea class="concepts-covered" id ="conceptsCovered" placeholder="Today we learned about..."></textarea>
+        </fieldset> 
+        <fieldset class="entry">
+        <label for="journalEntry">Journal Entry</label>
+        <textarea class="journal-entry" id="journalEntry" placeholder="Go into more detail here..."></textarea>
+        </fieldset> 
+        <fieldset>
+        <label for="journalFeelins">Mood for the day</label>
+        <select class="feelings" id="daily-mood">
+        ${
+            moods.map(
+                (mood) => {
+                    return `<option value="${ mood.id }">${ mood.label }</option>`
+                }
+                ).join("")
+            }
+            
+            </select>
             </fieldset>
-        <button class="submit-button" id="form-submit">Submit</button>
-    </form>
-    `
+            <button class="submit-button" id="form-submit">Submit</button>
+            </form>
+            `
+        })
 }
