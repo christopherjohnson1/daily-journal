@@ -20,27 +20,6 @@
       "concept": "javascript modules",
       "entry": "Today we talked about how to setup javascript modules to compartmentalize our project.",
       "moodId": 1
-    },
-    {
-      "date": "2020-08-12",
-      "concept": "test",
-      "entry": "test",
-      "moodId": 1,
-      "id": 4
-    },
-    {
-      "date": "2020-07-31",
-      "concept": "TEST TEST TEST",
-      "entry": "TEST TEST TEST",
-      "moodId": 1,
-      "id": 5
-    },
-    {
-      "date": "2020-08-18",
-      "concept": "sdfsdf",
-      "entry": "sdfsdf",
-      "moodId": 4,
-      "id": 6
     }
   ],
   "moods": [

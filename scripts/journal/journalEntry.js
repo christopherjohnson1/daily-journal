@@ -6,7 +6,7 @@ export const journalAsHTML = (journal) => {
   <div>Concept(s): ${journal.concept}</div>
   <div class="journal-entry">"${journal.entry}"</div>
   <div>Mood: ${journal.mood.label}</div>
-  <button class="delete">Delete Entry</button>
+  <button class="delete" id="deleteEntry--${ journal.id }">Delete Entry</button>
   <button class="edit">Edit Entry</button>
 </section>
   `
