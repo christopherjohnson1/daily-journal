@@ -36,25 +36,11 @@
       "id": 5
     },
     {
-      "date": "2020-08-17",
-      "concept": "qqqqq",
-      "entry": "qqqqq",
-      "mood": "3",
+      "date": "2020-08-18",
+      "concept": "sdfsdf",
+      "entry": "sdfsdf",
+      "moodId": 4,
       "id": 6
-    },
-    {
-      "date": "2020-08-17",
-      "concept": "dfsfd",
-      "entry": "dfdsfds",
-      "mood": "4",
-      "id": 7
-    },
-    {
-      "date": "2020-08-17",
-      "concept": "xcvxcv",
-      "entry": "xcvxcvxcv",
-      "mood": "1",
-      "id": 8
     }
   ],
   "moods": [
