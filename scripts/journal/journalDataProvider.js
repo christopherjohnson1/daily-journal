@@ -15,7 +15,7 @@ export const useJournalEntries = () => {
 }
 
 export const getEntries = () => {
-  return fetch("http://localhost:3000/entries")
+  return fetch("http://localhost:3000/entries?_expand=mood")
       .then(response => response.json())
       .then(entryArray => {
         journal = entryArray
@@ -23,7 +23,7 @@ export const getEntries = () => {
 }
 
 export const saveJournalEntry = (journalEntryObj) => {
-  fetch("http://localhost:3000/entries", {
+  fetch("http://localhost:3000/entries?_expand=mood", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
