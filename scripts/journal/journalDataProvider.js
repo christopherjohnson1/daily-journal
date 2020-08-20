@@ -3,7 +3,9 @@ let journal = []
 const eventHub = document.querySelector(".eventHub")
 
 const dispatchStateChangeEvent = () => {
-  eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
+    const entryStateChanged = new CustomEvent("entryStateChanged")
+
+    eventHub.dispatchEvent(entryStateChanged)
 }
 
 export const useJournalEntries = () => {
@@ -39,4 +41,5 @@ export const deleteJournalEntry = (entryId) => {
         method: "DELETE"
     })
     .then(getEntries)
+    .then(dispatchStateChangeEvent)
 }

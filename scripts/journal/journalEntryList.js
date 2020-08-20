@@ -9,8 +9,13 @@ eventHub.addEventListener("click", clickEvent => {
         const [prefix, id] = clickEvent.target.id.split("--")
         deleteJournalEntry(id).then(
             () => {
-                const updatedEntries = useJournalEntries()
-                render(updatedEntries)
+                getEntries()
+                .then(
+                    () => {
+                        const updatedEntries = useJournalEntries()
+                        render(updatedEntries)
+                    }
+                )
             }
         )
     }
@@ -19,7 +24,7 @@ eventHub.addEventListener("click", clickEvent => {
  const render = () => {
   const journals = useJournalEntries()
 
-  contentElement.innerHTML += `
+  contentElement.innerHTML = `
       <article class="journalEntriesList">
           ${journals.map(journalObj => journalAsHTML(journalObj)).join('')}
       </article>
